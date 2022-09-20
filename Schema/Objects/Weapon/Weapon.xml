@@ -3,7 +3,7 @@
     <member name="WeaponClass" type="enum" typeid="WeaponClass" />
     <member name="FireRate" type="float" minvalue="0" maxvalue="100" />
     <member name="Spread" type="float" minvalue="0" maxvalue="360" />
-    <member name="Magazine" type="int" minvalue="0" maxvalue="999999999" />
+    <member name="Magazine" type="int" minvalue="0" />
     <member name="ActivationType" type="enum" typeid="ActivationType" />
     <member name="ShotSound" type="audioclip" />
     <member name="ChargeSound" type="audioclip" />
