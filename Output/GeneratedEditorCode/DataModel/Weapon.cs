@@ -25,7 +25,7 @@ namespace EditorDatabase.DataModel
 			WeaponClass = serializable.WeaponClass;
 			FireRate = new NumericValue<float>(serializable.FireRate, 0f, 100f);
 			Spread = new NumericValue<float>(serializable.Spread, 0f, 360f);
-			Magazine = new NumericValue<int>(serializable.Magazine, 0, 999999999);
+			Magazine = new NumericValue<int>(serializable.Magazine, 0, 2147483647);
 			ActivationType = serializable.ActivationType;
 			ShotSound = serializable.ShotSound;
 			ChargeSound = serializable.ChargeSound;
@@ -54,7 +54,7 @@ namespace EditorDatabase.DataModel
 		public WeaponClass WeaponClass;
 		public NumericValue<float> FireRate = new NumericValue<float>(0, 0f, 100f);
 		public NumericValue<float> Spread = new NumericValue<float>(0, 0f, 360f);
-		public NumericValue<int> Magazine = new NumericValue<int>(0, 0, 999999999);
+		public NumericValue<int> Magazine = new NumericValue<int>(0, 0, 2147483647);
 		public ActivationType ActivationType;
 		public string ShotSound;
 		public string ChargeSound;

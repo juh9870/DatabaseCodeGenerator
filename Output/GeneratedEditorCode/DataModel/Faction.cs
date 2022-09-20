@@ -24,8 +24,8 @@ namespace EditorDatabase.DataModel
 			Id = new ItemId<Faction>(serializable.Id, serializable.FileName);
 			Name = serializable.Name;
 			Color = Helpers.ColorFromString(serializable.Color);
-			HomeStarDistance = new NumericValue<int>(serializable.HomeStarDistance, 0, 1000);
-			WanderingShipsDistance = new NumericValue<int>(serializable.WanderingShipsDistance, 0, 1000);
+			HomeStarDistance = new NumericValue<int>(serializable.HomeStarDistance, 0, 2147483647);
+			WanderingShipsDistance = new NumericValue<int>(serializable.WanderingShipsDistance, 0, 2147483647);
 			Hidden = serializable.Hidden;
 			Hostile = serializable.Hostile;
 
@@ -47,8 +47,8 @@ namespace EditorDatabase.DataModel
 
 		public string Name;
 		public System.Drawing.Color Color;
-		public NumericValue<int> HomeStarDistance = new NumericValue<int>(0, 0, 1000);
-		public NumericValue<int> WanderingShipsDistance = new NumericValue<int>(0, 0, 1000);
+		public NumericValue<int> HomeStarDistance = new NumericValue<int>(0, 0, 2147483647);
+		public NumericValue<int> WanderingShipsDistance = new NumericValue<int>(0, 0, 2147483647);
 		public bool Hidden;
 		public bool Hostile;
 

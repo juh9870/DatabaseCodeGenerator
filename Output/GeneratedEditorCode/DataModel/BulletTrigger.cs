@@ -167,8 +167,8 @@ namespace EditorDatabase.DataModel
 			Quantity = new NumericValue<int>(serializable.Quantity, 0, 1000);
 			Size = new NumericValue<float>(serializable.Size, 0f, 100f);
 			Cooldown = new NumericValue<float>(serializable.Cooldown, 0f, 1000f);
-			RandomFactor = new NumericValue<float>(serializable.RandomFactor, 0f, 1f);
-			PowerMultiplier = new NumericValue<float>(serializable.PowerMultiplier, 0f, 1000f);
+			RandomFactor = new NumericValue<float>(serializable.RandomFactor, 0f, 3.402823E+38f);
+			PowerMultiplier = new NumericValue<float>(serializable.PowerMultiplier, 0f, 3.402823E+38f);
 			MaxNestingLevel = new NumericValue<int>(serializable.MaxNestingLevel, 0, 100);
 
 			OnDataDeserialized(serializable, database);
@@ -196,8 +196,8 @@ namespace EditorDatabase.DataModel
 		public NumericValue<int> Quantity = new NumericValue<int>(0, 0, 1000);
 		public NumericValue<float> Size = new NumericValue<float>(0, 0f, 100f);
 		public NumericValue<float> Cooldown = new NumericValue<float>(0, 0f, 1000f);
-		public NumericValue<float> RandomFactor = new NumericValue<float>(0, 0f, 1f);
-		public NumericValue<float> PowerMultiplier = new NumericValue<float>(0, 0f, 1000f);
+		public NumericValue<float> RandomFactor = new NumericValue<float>(0, 0f, 3.402823E+38f);
+		public NumericValue<float> PowerMultiplier = new NumericValue<float>(0, 0f, 3.402823E+38f);
 		public NumericValue<int> MaxNestingLevel = new NumericValue<int>(0, 0, 100);
 	}
 

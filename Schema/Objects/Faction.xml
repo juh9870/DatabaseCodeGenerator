@@ -2,8 +2,8 @@
 <data name="Faction" type="object" typeid="Faction" >
     <member name="Name" type="string" />
     <member name="Color" type="color" />
-    <member name="HomeStarDistance" type="int" minvalue="0" maxvalue="1000" />
-    <member name="WanderingShipsDistance" type="int" minvalue="0" maxvalue="1000" />
+    <member name="HomeStarDistance" type="int" minvalue="0" />
+    <member name="WanderingShipsDistance" type="int" minvalue="0" />
     <member name="Hidden" type="bool" />
     <member name="Hostile" type="bool" />
 </data>

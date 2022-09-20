@@ -2,7 +2,7 @@
 <data name="Barrel" type="struct" >
     <member name="Position" type="vector" />
     <member name="Rotation" type="float" minvalue="-360" maxvalue="360" />
-    <member name="Offset" type="float" minvalue="0" maxvalue="1" />
+    <member name="Offset" type="float" minvalue="0" />
     <member name="PlatformType" type="enum" typeid="PlatformType" />
     <member name="AutoAimingArc" type="float" minvalue="0" maxvalue="360" />
     <member name="RotationSpeed" type="float" minvalue="0" maxvalue="1000" />

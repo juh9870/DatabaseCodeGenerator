@@ -23,7 +23,7 @@ namespace EditorDatabase.DataModel
 		public Engine(EngineSerializable serializable, Database database)
 		{
 			Position = serializable.Position;
-			Size = new NumericValue<float>(serializable.Size, 0f, 1f);
+			Size = new NumericValue<float>(serializable.Size, 0f, 3.402823E+38f);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -38,7 +38,7 @@ namespace EditorDatabase.DataModel
 		}
 
 		public Vector2 Position;
-		public NumericValue<float> Size = new NumericValue<float>(0, 0f, 1f);
+		public NumericValue<float> Size = new NumericValue<float>(0, 0f, 3.402823E+38f);
 
 		public static Engine DefaultValue { get; private set; }
 	}

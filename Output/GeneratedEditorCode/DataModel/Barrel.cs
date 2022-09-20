@@ -24,7 +24,7 @@ namespace EditorDatabase.DataModel
 		{
 			Position = serializable.Position;
 			Rotation = new NumericValue<float>(serializable.Rotation, -360f, 360f);
-			Offset = new NumericValue<float>(serializable.Offset, 0f, 1f);
+			Offset = new NumericValue<float>(serializable.Offset, 0f, 3.402823E+38f);
 			PlatformType = serializable.PlatformType;
 			AutoAimingArc = new NumericValue<float>(serializable.AutoAimingArc, 0f, 360f);
 			RotationSpeed = new NumericValue<float>(serializable.RotationSpeed, 0f, 1000f);
@@ -53,7 +53,7 @@ namespace EditorDatabase.DataModel
 
 		public Vector2 Position;
 		public NumericValue<float> Rotation = new NumericValue<float>(0, -360f, 360f);
-		public NumericValue<float> Offset = new NumericValue<float>(0, 0f, 1f);
+		public NumericValue<float> Offset = new NumericValue<float>(0, 0f, 3.402823E+38f);
 		public PlatformType PlatformType;
 		public NumericValue<float> AutoAimingArc = new NumericValue<float>(0, 0f, 360f);
 		public NumericValue<float> RotationSpeed = new NumericValue<float>(0, 0f, 1000f);

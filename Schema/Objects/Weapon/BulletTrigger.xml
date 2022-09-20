@@ -11,7 +11,7 @@
     <member name="Size" type="float" minvalue="0" maxvalue="100" case="PlaySfx,SpawnBullet" />
     <member name="Lifetime" type="float" minvalue="0" maxvalue="1000" case="PlaySfx" />
     <member name="Cooldown" type="float" minvalue="0" maxvalue="1000" case="SpawnBullet" />
-    <member name="RandomFactor" type="float" minvalue="0" maxvalue="1" case="SpawnBullet" />
-    <member name="PowerMultiplier" type="float" minvalue="0" maxvalue="1000" case="SpawnBullet" />
+    <member name="RandomFactor" type="float" minvalue="0" case="SpawnBullet" />
+    <member name="PowerMultiplier" type="float" minvalue="0" case="SpawnBullet" />
     <member name="MaxNestingLevel" type="int" minvalue="0" maxvalue="100" case="SpawnBullet" />
 </data>
