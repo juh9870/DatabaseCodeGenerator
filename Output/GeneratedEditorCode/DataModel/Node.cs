@@ -94,7 +94,7 @@ namespace EditorDatabase.DataModel
 
 		public Node(NodeSerializable serializable, Database database)
 		{
-			Id = new NumericValue<int>(serializable.Id, 1, 999999);
+			Id = new NumericValue<int>(serializable.Id, 1, 2147483647);
 			Type = serializable.Type;
 			_content = CreateContent(serializable.Type);
 			_content.Load(serializable, database);
@@ -152,7 +152,7 @@ namespace EditorDatabase.DataModel
 		}
 
 		private INodeContent _content;
-		public NumericValue<int> Id = new NumericValue<int>(0, 1, 999999);
+		public NumericValue<int> Id = new NumericValue<int>(0, 1, 2147483647);
 		public NodeType Type;
 
 		public static Node DefaultValue { get; private set; }
@@ -210,7 +210,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Faction = database.GetFactionId(serializable.Faction);
 			Level = new NumericValue<int>(serializable.Value, 0, 10000);
 
@@ -225,7 +225,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public ItemId<Faction> Faction = ItemId<Faction>.Empty;
 		public NumericValue<int> Level = new NumericValue<int>(0, 0, 10000);
 	}
@@ -238,7 +238,7 @@ namespace EditorDatabase.DataModel
 		public void Load(NodeSerializable serializable, Database database)
 		{
 			Message = serializable.Message;
-			DefaultTransition = new NumericValue<int>(serializable.DefaultTransition, 0, 999999);
+			DefaultTransition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Transitions = serializable.Transitions?.Select(item => new NodeTransition(item, database)).ToArray();
 
 			OnDataDeserialized(serializable, database);
@@ -256,7 +256,7 @@ namespace EditorDatabase.DataModel
 		}
 
 		public string Message;
-		public NumericValue<int> DefaultTransition = new NumericValue<int>(0, 0, 999999);
+		public NumericValue<int> DefaultTransition = new NumericValue<int>(0, 1, 2147483647);
 		public NodeTransition[] Transitions;
 	}
 
@@ -268,7 +268,7 @@ namespace EditorDatabase.DataModel
 		public void Load(NodeSerializable serializable, Database database)
 		{
 			Message = serializable.Message;
-			DefaultTransition = new NumericValue<int>(serializable.DefaultTransition, 0, 999999);
+			DefaultTransition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Transitions = serializable.Transitions?.Select(item => new NodeTransition(item, database)).ToArray();
 
 			OnDataDeserialized(serializable, database);
@@ -286,7 +286,7 @@ namespace EditorDatabase.DataModel
 		}
 
 		public string Message;
-		public NumericValue<int> DefaultTransition = new NumericValue<int>(0, 0, 999999);
+		public NumericValue<int> DefaultTransition = new NumericValue<int>(0, 1, 2147483647);
 		public NodeTransition[] Transitions;
 	}
 
@@ -324,8 +324,8 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			VictoryTransition = new NumericValue<int>(serializable.DefaultTransition, 1, 999999);
-			FailureTransition = new NumericValue<int>(serializable.FailureTransition, 1, 999999);
+			VictoryTransition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
+			FailureTransition = new NumericValue<int>(serializable.FailureTransition, 1, 2147483647);
 			Enemy = database.GetFleetId(serializable.Enemy);
 			Loot = database.GetLootId(serializable.Loot);
 
@@ -341,8 +341,8 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> VictoryTransition = new NumericValue<int>(0, 1, 999999);
-		public NumericValue<int> FailureTransition = new NumericValue<int>(0, 1, 999999);
+		public NumericValue<int> VictoryTransition = new NumericValue<int>(0, 1, 2147483647);
+		public NumericValue<int> FailureTransition = new NumericValue<int>(0, 1, 2147483647);
 		public ItemId<Fleet> Enemy = ItemId<Fleet>.Empty;
 		public ItemId<LootModel> Loot = ItemId<LootModel>.Empty;
 	}
@@ -354,8 +354,8 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			VictoryTransition = new NumericValue<int>(serializable.DefaultTransition, 1, 999999);
-			FailureTransition = new NumericValue<int>(serializable.FailureTransition, 1, 999999);
+			VictoryTransition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
+			FailureTransition = new NumericValue<int>(serializable.FailureTransition, 1, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -367,8 +367,8 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> VictoryTransition = new NumericValue<int>(0, 1, 999999);
-		public NumericValue<int> FailureTransition = new NumericValue<int>(0, 1, 999999);
+		public NumericValue<int> VictoryTransition = new NumericValue<int>(0, 1, 2147483647);
+		public NumericValue<int> FailureTransition = new NumericValue<int>(0, 1, 2147483647);
 	}
 
 	public partial class Node_DestroyOccupants : INodeContent
@@ -378,7 +378,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -389,7 +389,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 	}
 
 	public partial class Node_SuppressOccupants : INodeContent
@@ -399,7 +399,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -410,7 +410,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 	}
 
 	public partial class Node_Retreat : INodeContent
@@ -420,7 +420,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -431,7 +431,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 	}
 
 	public partial class Node_ReceiveItem : INodeContent
@@ -441,7 +441,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Loot = database.GetLootId(serializable.Loot);
 
 			OnDataDeserialized(serializable, database);
@@ -454,7 +454,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public ItemId<LootModel> Loot = ItemId<LootModel>.Empty;
 	}
 
@@ -465,7 +465,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Loot = database.GetLootId(serializable.Loot);
 
 			OnDataDeserialized(serializable, database);
@@ -478,7 +478,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public ItemId<LootModel> Loot = ItemId<LootModel>.Empty;
 	}
 
@@ -489,7 +489,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Loot = database.GetLootId(serializable.Loot);
 
 			OnDataDeserialized(serializable, database);
@@ -502,7 +502,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public ItemId<LootModel> Loot = ItemId<LootModel>.Empty;
 	}
 
@@ -513,7 +513,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Quest = database.GetQuestId(serializable.Quest);
 
 			OnDataDeserialized(serializable, database);
@@ -526,7 +526,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public ItemId<QuestModel> Quest = ItemId<QuestModel>.Empty;
 	}
 
@@ -537,7 +537,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Character = database.GetCharacterId(serializable.Character);
 			Value = new NumericValue<int>(serializable.Value, -2147483648, 2147483647);
 
@@ -552,7 +552,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public ItemId<Character> Character = ItemId<Character>.Empty;
 		public NumericValue<int> Value = new NumericValue<int>(0, -2147483648, 2147483647);
 	}
@@ -564,7 +564,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Value = new NumericValue<int>(serializable.Value, -2147483648, 2147483647);
 
 			OnDataDeserialized(serializable, database);
@@ -577,7 +577,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public NumericValue<int> Value = new NumericValue<int>(0, -2147483648, 2147483647);
 	}
 
@@ -588,7 +588,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Character = database.GetCharacterId(serializable.Character);
 			Value = new NumericValue<int>(serializable.Value, -2147483648, 2147483647);
 
@@ -603,7 +603,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public ItemId<Character> Character = ItemId<Character>.Empty;
 		public NumericValue<int> Value = new NumericValue<int>(0, -2147483648, 2147483647);
 	}
@@ -615,7 +615,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Value = new NumericValue<int>(serializable.Value, -2147483648, 2147483647);
 
 			OnDataDeserialized(serializable, database);
@@ -628,7 +628,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public NumericValue<int> Value = new NumericValue<int>(0, -2147483648, 2147483647);
 	}
 
@@ -639,7 +639,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -650,7 +650,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 	}
 
 	public partial class Node_LiberateStarBase : INodeContent
@@ -660,7 +660,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -671,7 +671,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 	}
 
 	public partial class Node_ChangeFaction : INodeContent
@@ -681,7 +681,7 @@ namespace EditorDatabase.DataModel
 
 		public void Load(NodeSerializable serializable, Database database)
 		{
-			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
+			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 2147483647);
 			Faction = database.GetFactionId(serializable.Faction);
 
 			OnDataDeserialized(serializable, database);
@@ -694,7 +694,7 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 2147483647);
 		public ItemId<Faction> Faction = ItemId<Faction>.Empty;
 	}
 

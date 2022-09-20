@@ -22,7 +22,7 @@ namespace EditorDatabase.DataModel
 
 		public NodeTransition(NodeTransitionSerializable serializable, Database database)
 		{
-			TargetNode = new NumericValue<int>(serializable.TargetNode, 1, 1000);
+			TargetNode = new NumericValue<int>(serializable.TargetNode, 1, 2147483647);
 			Requirement = new Requirement(serializable.Requirement, database);
 			Weight = new NumericValue<float>(serializable.Weight, 0f, 1000f);
 
@@ -39,7 +39,7 @@ namespace EditorDatabase.DataModel
 			return serializable;
 		}
 
-		public NumericValue<int> TargetNode = new NumericValue<int>(0, 1, 1000);
+		public NumericValue<int> TargetNode = new NumericValue<int>(0, 1, 2147483647);
 		public Requirement Requirement = new Requirement();
 		public NumericValue<float> Weight = new NumericValue<float>(0, 0f, 1000f);
 

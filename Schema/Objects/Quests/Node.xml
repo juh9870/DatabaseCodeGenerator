@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data name="Node" type="struct" switch="Type" >
-    <member name="Id" type="int" minvalue="1" maxvalue="999999" />
+    <member name="Id" type="int" minvalue="1" />
     <member name="Type" type="enum" typeid="NodeType" />
     <member name="RequiredView" type="enum" typeid="RequiredViewMode" case="ShowDialog" />
     <member name="Message" type="string" case="ShowDialog,Switch,Condition,Random" />
-    <member name="DefaultTransition" type="int" case="Switch,Random" minvalue="0" maxvalue="999999" />
+    <member name="DefaultTransition" type="int" case="Switch,Random" minvalue="1" />
     <member name="DefaultTransition" type="int" case="Retreat DestroyOccupants SuppressOccupants ReceiveItem RemoveItem Trade StartQuest 
     ChangeFactionRelations SetFactionRelations ChangeCharacterRelations SetCharacterRelations OpenShipyard 
-    ChangeFaction CaptureStarBase LiberateStarBase" minvalue="1" maxvalue="1000" alias="Transition" />
-    <member name="DefaultTransition" type="int" case="AttackFleet,AttackOccupants" alias="VictoryTransition" minvalue="1" maxvalue="999999" />
-    <member name="FailureTransition" type="int" case="AttackFleet,AttackOccupants" minvalue="1" maxvalue="999999" />
+    ChangeFaction CaptureStarBase LiberateStarBase" minvalue="1" alias="Transition" />
+    <member name="DefaultTransition" type="int" case="AttackFleet,AttackOccupants" alias="VictoryTransition" minvalue="1" />
+    <member name="FailureTransition" type="int" case="AttackFleet,AttackOccupants" minvalue="1" />
     <member name="Enemy" type="object" typeid="Fleet" case="ShowDialog,AttackFleet" />
     <member name="Loot" type="object" typeid="Loot" case="ShowDialog,ReceiveItem,RemoveItem,Trade,AttackFleet" />
     <member name="Quest" type="object" typeid="Quest" case="StartQuest" />
