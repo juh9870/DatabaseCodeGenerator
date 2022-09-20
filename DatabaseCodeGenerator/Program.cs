@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace DatabaseCodeGenerator
 {
@@ -6,6 +7,7 @@ namespace DatabaseCodeGenerator
     {
         static void Main(string[] args)
         {
+            Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             if (args.Length < 2)
             {
                 Console.WriteLine("Usage: " + AppDomain.CurrentDomain.FriendlyName + " <schema dir> <output dir>");

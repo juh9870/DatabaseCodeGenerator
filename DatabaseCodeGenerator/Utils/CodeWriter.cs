@@ -16,6 +16,7 @@ namespace DatabaseCodeGenerator.Utils
 
         public void Write(string ns, string filename, string content)
         {
+            content = content.Replace("\r\n", "\n");
             var fullpath = Path.Combine(_rootFolder, ns.Replace(".", "/"));
             Directory.CreateDirectory(fullpath);
             File.WriteAllText(Path.Combine(fullpath, filename + Ext), content);
