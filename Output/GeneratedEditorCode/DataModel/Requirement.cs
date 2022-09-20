@@ -314,8 +314,8 @@ namespace EditorDatabase.DataModel
 
 		public void Load(RequirementSerializable serializable, Database database)
 		{
-			MinValue = new NumericValue<int>(serializable.MinValue, -100, 100);
-			MaxValue = new NumericValue<int>(serializable.MaxValue, -100, 100);
+			MinValue = new NumericValue<int>(serializable.MinValue, -2147483648, 2147483647);
+			MaxValue = new NumericValue<int>(serializable.MaxValue, -2147483648, 2147483647);
 			Character = database.GetCharacterId(serializable.Character);
 
 			OnDataDeserialized(serializable, database);
@@ -329,8 +329,8 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> MinValue = new NumericValue<int>(0, -100, 100);
-		public NumericValue<int> MaxValue = new NumericValue<int>(0, -100, 100);
+		public NumericValue<int> MinValue = new NumericValue<int>(0, -2147483648, 2147483647);
+		public NumericValue<int> MaxValue = new NumericValue<int>(0, -2147483648, 2147483647);
 		public ItemId<Character> Character = ItemId<Character>.Empty;
 	}
 
@@ -341,8 +341,8 @@ namespace EditorDatabase.DataModel
 
 		public void Load(RequirementSerializable serializable, Database database)
 		{
-			MinValue = new NumericValue<int>(serializable.MinValue, -100, 100);
-			MaxValue = new NumericValue<int>(serializable.MaxValue, -100, 100);
+			MinValue = new NumericValue<int>(serializable.MinValue, -2147483648, 2147483647);
+			MaxValue = new NumericValue<int>(serializable.MaxValue, -2147483648, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -354,8 +354,8 @@ namespace EditorDatabase.DataModel
 			OnDataSerialized(ref serializable);
 		}
 
-		public NumericValue<int> MinValue = new NumericValue<int>(0, -100, 100);
-		public NumericValue<int> MaxValue = new NumericValue<int>(0, -100, 100);
+		public NumericValue<int> MinValue = new NumericValue<int>(0, -2147483648, 2147483647);
+		public NumericValue<int> MaxValue = new NumericValue<int>(0, -2147483648, 2147483647);
 	}
 
 	public partial class Requirement_Faction : IRequirementContent

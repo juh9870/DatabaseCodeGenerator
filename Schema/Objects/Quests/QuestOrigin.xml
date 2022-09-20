@@ -4,6 +4,6 @@
     <member name="Factions" type="struct" typeid="FactionFilter" />
     <member name="MinDistance" type="int" minvalue="0" maxvalue="9999" />
     <member name="MaxDistance" type="int" minvalue="0" maxvalue="9999" />
-    <member name="MinRelations" type="int" minvalue="-100" maxvalue="100" />
-    <member name="MaxRelations" type="int" minvalue="-100" maxvalue="100" />
+    <member name="MinRelations" type="int" />
+    <member name="MaxRelations" type="int" />
 </data>

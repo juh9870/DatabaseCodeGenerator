@@ -539,7 +539,7 @@ namespace EditorDatabase.DataModel
 		{
 			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
 			Character = database.GetCharacterId(serializable.Character);
-			Value = new NumericValue<int>(serializable.Value, -100, 100);
+			Value = new NumericValue<int>(serializable.Value, -2147483648, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -554,7 +554,7 @@ namespace EditorDatabase.DataModel
 
 		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
 		public ItemId<Character> Character = ItemId<Character>.Empty;
-		public NumericValue<int> Value = new NumericValue<int>(0, -100, 100);
+		public NumericValue<int> Value = new NumericValue<int>(0, -2147483648, 2147483647);
 	}
 
 	public partial class Node_SetFactionRelations : INodeContent
@@ -565,7 +565,7 @@ namespace EditorDatabase.DataModel
 		public void Load(NodeSerializable serializable, Database database)
 		{
 			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
-			Value = new NumericValue<int>(serializable.Value, -100, 100);
+			Value = new NumericValue<int>(serializable.Value, -2147483648, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -578,7 +578,7 @@ namespace EditorDatabase.DataModel
 		}
 
 		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
-		public NumericValue<int> Value = new NumericValue<int>(0, -100, 100);
+		public NumericValue<int> Value = new NumericValue<int>(0, -2147483648, 2147483647);
 	}
 
 	public partial class Node_ChangeCharacterRelations : INodeContent
@@ -590,7 +590,7 @@ namespace EditorDatabase.DataModel
 		{
 			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
 			Character = database.GetCharacterId(serializable.Character);
-			Value = new NumericValue<int>(serializable.Value, -100, 100);
+			Value = new NumericValue<int>(serializable.Value, -2147483648, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -605,7 +605,7 @@ namespace EditorDatabase.DataModel
 
 		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
 		public ItemId<Character> Character = ItemId<Character>.Empty;
-		public NumericValue<int> Value = new NumericValue<int>(0, -100, 100);
+		public NumericValue<int> Value = new NumericValue<int>(0, -2147483648, 2147483647);
 	}
 
 	public partial class Node_ChangeFactionRelations : INodeContent
@@ -616,7 +616,7 @@ namespace EditorDatabase.DataModel
 		public void Load(NodeSerializable serializable, Database database)
 		{
 			Transition = new NumericValue<int>(serializable.DefaultTransition, 1, 1000);
-			Value = new NumericValue<int>(serializable.Value, -100, 100);
+			Value = new NumericValue<int>(serializable.Value, -2147483648, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -629,7 +629,7 @@ namespace EditorDatabase.DataModel
 		}
 
 		public NumericValue<int> Transition = new NumericValue<int>(0, 1, 1000);
-		public NumericValue<int> Value = new NumericValue<int>(0, -100, 100);
+		public NumericValue<int> Value = new NumericValue<int>(0, -2147483648, 2147483647);
 	}
 
 	public partial class Node_CaptureStarBase : INodeContent

@@ -524,7 +524,7 @@ namespace GameDatabase.DataModel
         {
 			Transition = UnityEngine.Mathf.Clamp(serializable.DefaultTransition, 1, 1000);
 			Character = loader.GetCharacter(new ItemId<Character>(serializable.Character));
-			Value = UnityEngine.Mathf.Clamp(serializable.Value, -100, 100);
+			Value = UnityEngine.Mathf.Clamp(serializable.Value, -2147483648, 2147483647);
 
             OnDataDeserialized(serializable, loader);
         }
@@ -546,7 +546,7 @@ namespace GameDatabase.DataModel
             : base(serializable, loader)
         {
 			Transition = UnityEngine.Mathf.Clamp(serializable.DefaultTransition, 1, 1000);
-			Value = UnityEngine.Mathf.Clamp(serializable.Value, -100, 100);
+			Value = UnityEngine.Mathf.Clamp(serializable.Value, -2147483648, 2147483647);
 
             OnDataDeserialized(serializable, loader);
         }
@@ -568,7 +568,7 @@ namespace GameDatabase.DataModel
         {
 			Transition = UnityEngine.Mathf.Clamp(serializable.DefaultTransition, 1, 1000);
 			Character = loader.GetCharacter(new ItemId<Character>(serializable.Character));
-			Value = UnityEngine.Mathf.Clamp(serializable.Value, -100, 100);
+			Value = UnityEngine.Mathf.Clamp(serializable.Value, -2147483648, 2147483647);
 
             OnDataDeserialized(serializable, loader);
         }
@@ -590,7 +590,7 @@ namespace GameDatabase.DataModel
             : base(serializable, loader)
         {
 			Transition = UnityEngine.Mathf.Clamp(serializable.DefaultTransition, 1, 1000);
-			Value = UnityEngine.Mathf.Clamp(serializable.Value, -100, 100);
+			Value = UnityEngine.Mathf.Clamp(serializable.Value, -2147483648, 2147483647);
 
             OnDataDeserialized(serializable, loader);
         }

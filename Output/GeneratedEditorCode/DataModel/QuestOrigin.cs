@@ -26,8 +26,8 @@ namespace EditorDatabase.DataModel
 			Factions = new RequiredFactions(serializable.Factions, database);
 			MinDistance = new NumericValue<int>(serializable.MinDistance, 0, 9999);
 			MaxDistance = new NumericValue<int>(serializable.MaxDistance, 0, 9999);
-			MinRelations = new NumericValue<int>(serializable.MinRelations, -100, 100);
-			MaxRelations = new NumericValue<int>(serializable.MaxRelations, -100, 100);
+			MinRelations = new NumericValue<int>(serializable.MinRelations, -2147483648, 2147483647);
+			MaxRelations = new NumericValue<int>(serializable.MaxRelations, -2147483648, 2147483647);
 
 			OnDataDeserialized(serializable, database);
 		}
@@ -49,8 +49,8 @@ namespace EditorDatabase.DataModel
 		public RequiredFactions Factions = new RequiredFactions();
 		public NumericValue<int> MinDistance = new NumericValue<int>(0, 0, 9999);
 		public NumericValue<int> MaxDistance = new NumericValue<int>(0, 0, 9999);
-		public NumericValue<int> MinRelations = new NumericValue<int>(0, -100, 100);
-		public NumericValue<int> MaxRelations = new NumericValue<int>(0, -100, 100);
+		public NumericValue<int> MinRelations = new NumericValue<int>(0, -2147483648, 2147483647);
+		public NumericValue<int> MaxRelations = new NumericValue<int>(0, -2147483648, 2147483647);
 
 		public static QuestOrigin DefaultValue { get; private set; }
 	}
